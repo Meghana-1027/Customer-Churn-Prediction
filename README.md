@@ -1,37 +1,7 @@
-Customer Churn Prediction Using Deep Learning
+Customer Churn Prediction
 
-This project implements a deep learning-based binary classification model to predict customer churn using the Telco Customer Churn dataset. It also includes model explainability using LIME and SHAP to interpret the predictions.
-Overview
-Customer churn prediction helps businesses identify customers who are likely to stop using their services. This model leverages neural networks for prediction and explainable AI (XAI) tools to improve trust and transparency.
-Dataset
-Source: Telco Customer Churn dataset
-Target variable: Churn Value (1 = Churned, 0 = Not Churned)
-Features: Demographic, account, and service usage data
-Preprocessing
-Dropped irrelevant columns such as customer ID and location details
-Converted 'Total Charges' to numeric and handled missing values
-Encoded categorical features using LabelEncoder
-Standardized numerical features using StandardScaler
-Model Architecture
-Input layer with shape based on number of features
-Two dense layers with ReLU activation and dropout
-Batch normalization for training stability
-Output layer with sigmoid activation for binary classification
-Compiled with Adam optimizer, binary crossentropy loss, and accuracy and AUC metrics
-Training and Evaluation
-Data split: 80% training, 20% testing
-Epochs: 25
-Batch size: 32
-Evaluation metrics: Accuracy, AUC, Confusion Matrix, ROC Curve, and Classification Report
-Explainability
-LIME
-Explains individual predictions by approximating the model locally with interpretable models
-Visualized using matplotlib with color-coded bar charts showing feature contributions
-SHAP
-Provides global and local explanations using Shapley values
-Highlights important features driving churn predictions
-Visualization
-Accuracy and loss curves over training epochs
-ROC curve with AUC score
-Enhanced LIME explanation plots for individual predictions
-SHAP summary plots and force plots
+This project focuses on predicting customer churn using a deep learning model built with TensorFlow and Keras. The dataset used is the Telco Customer Churn dataset, which contains a variety of customer attributes including demographic information, account details, service usage, and billing data. The objective is to develop a robust binary classification model that can predict whether a customer is likely to churn or not.
+The dataset was preprocessed by removing irrelevant columns and handling missing values in the Total Charges column. All categorical variables were encoded using LabelEncoder, and numerical features were standardized using StandardScaler to improve model performance. The dataset was then split into training and testing subsets using an 80-20 split.
+A neural network model was designed using a sequential architecture with dense layers, batch normalization, and dropout layers to prevent overfitting. The model was compiled with binary cross-entropy loss, the Adam optimizer, and evaluation metrics including accuracy and AUC. After training the model over 25 epochs, performance metrics such as test accuracy and AUC were computed. Additionally, visualizations of the training and validation loss and accuracy across epochs, along with the ROC curve and confusion matrix, were created to evaluate the model's performance comprehensively.
+To provide interpretability, LIME (Local Interpretable Model-agnostic Explanations) was integrated. LIME helps in understanding the model’s prediction for individual customers by identifying the most influential features. A custom visualization using matplotlib was developed to better present LIME explanations, making it easier to comprehend the local decision boundaries of the model.
+This project demonstrates the application of machine learning and explainability techniques in a real-world customer retention problem. It highlights the importance of data preprocessing, model optimization, performance evaluation, and model interpretability in building a trustworthy AI system.
